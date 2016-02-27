@@ -2,10 +2,10 @@
 <widget id="com.ionicframework.benefitsapp425593" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>benefitsApp</name>
     <description>
-        Launch hackathon demo app
+        An Ionic Framework and Cordova project.
     </description>
-    <author email="michaelaubry1991@gmail.com" href="http://example.com.com/">
-      Michael Aubry
+    <author email="you@example.com" href="http://example.com.com/">
+      Your Name Here
     </author>
     <content src="index.html" />
     <access origin="*" />
