@@ -6,7 +6,7 @@ navigation history that also transitions its views in and out.
 <ion-tabs class="tabs-icon-top tabs-light">
 
   <!-- Dashboard Tab -->
-  <ion-tab title="" icon-off="ion-ios-pulse" icon-on="ion-ios-pulse-strong" href="#/tab/main">
+  <ion-tab title="" icon-off="ion-ios-list-outline" icon-on="ion-ios-list-outline" href="#/tab/main">
     <ion-nav-view name="tab-main"></ion-nav-view>
   </ion-tab>
 
@@ -16,8 +16,8 @@ navigation history that also transitions its views in and out.
   </ion-tab>
 
   <!-- Account Tab -->
-  <ion-tab title="" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/account">
-    <ion-nav-view name="tab-account"></ion-nav-view>
+  <ion-tab title="" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" ng-click="goDash()">
+    <ion-nav-view name="tab-dashboard"></ion-nav-view>
   </ion-tab>
 
 

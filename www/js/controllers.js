@@ -11,7 +11,14 @@ angular.module('benefitsApp.controllers', [])
 
 })
 
-.controller('HomeCtrl', function($scope, $state) {
+.controller('HomeCtrl', function($scope, $state, $ionicModal) {
+  // booking modal
+  $ionicModal.fromTemplateUrl('templates/home/booking-modal.html', {
+      scope: $scope,
+      animation: 'slide-in-up'
+    }).then(function(modal) {
+      $scope.modal = modal;
+    });
 
   // main home data
   $scope.listings = [
@@ -31,29 +38,37 @@ angular.module('benefitsApp.controllers', [])
   }
 
   // go to listing
-  $scope.go = function(listing) {
+  $scope.goListing = function(listing) {
     $state.go('home.listing', {listing: listing});
+  }
+
+  $scope.goDash = function(listing) {
+    $state.go('app.dashboard');
+  }
+
+  $scope.book = function() {
+    $scope.modal.show();
   }
   
   // main home function
-  $scope.voiceTest = function() {
-    try {     
-      ApiAIPlugin.requestVoice({},
-        function (response) {
-            console.log(JSON.stringify(response));
-            var query = response.result.resolvedQuery;
-            var to = query.metadata.parameters.to;
-            alert(query);
-            alert(to);
-        },
-        function (error) {
-            // place your error processing here 
-            alert(error);
-        });                
-    } catch (e) {
-        alert(e);
-    }
-  }
+  // $scope.voiceTest = function() {
+  //   try {     
+  //     ApiAIPlugin.requestVoice({},
+  //       function (response) {
+  //           console.log(JSON.stringify(response));
+  //           var query = response.result.resolvedQuery;
+  //           var to = query.metadata.parameters.to;
+  //           alert(query);
+  //           alert(to);
+  //       },
+  //       function (error) {
+  //           // place your error processing here 
+  //           alert(error);
+  //       });                
+  //   } catch (e) {
+  //       alert(e);
+  //   }
+  // }
 
 })
 
