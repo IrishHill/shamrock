@@ -11,19 +11,29 @@ angular.module('benefitsApp.controllers', [])
 
 })
 
-.controller('HomeCtrl', function($scope) {
+.controller('HomeCtrl', function($scope, $state) {
 
   // main home data
   $scope.listings = [
-    { title: 'Sonoma', image_url: './img/1118.jpeg', body: 'Your spending budget is low.', notifications: 1, alert: true },
-    { title: 'Napa', image_url: './img/1566.jpeg', list: true },
-    { title: 'Santa Cruz', image_url: './img/2439.jpeg', advice: true, 'subTitle': '$1500 paid vacation with Capital One', body: 'Enjoy a nice vacation with your usage of Capital One rewards card.' }
+    { title: 'Sonoma Bundle', selectedListing: false, image_url: './img/1118.jpeg', body: 'Your spending budget is low.', notifications: 1, alert: true },
+    { title: 'Napa Bundle', selectedListing: false, image_url: './img/1566.jpeg', list: true },
+    { title: 'Santa Cruz Bundle', selectedListing: false, image_url: './img/2439.jpeg', advice: true, 'subTitle': '$1500 paid vacation with Capital One', body: 'Enjoy a nice vacation with your usage of Capital One rewards card.' }
   ];
   $scope.discoveries = [
     { title: 'Sonoma', image_url: './img/61981fc1_original.jpg', body: 'Your spending budget is low.', notifications: 1, alert: true },
     { title: 'Napa', image_url: './img/61981fc1_original.jpg', list: true },
     { title: 'Santa Cruz', image_url: './img/61981fc1_original.jpg', advice: true, 'subTitle': '$1500 paid vacation with Capital One', body: 'Enjoy a nice vacation with your usage of Capital One rewards card.' }
   ];
+
+  // select listing
+  $scope.selectListing = function(listing) {
+    listing.selectedListing = !listing.selectedListing;
+  }
+
+  // go to listing
+  $scope.go = function(listing) {
+    $state.go('home.listing', {listing: listing});
+  }
   
   // main home function
   $scope.voiceTest = function() {
@@ -44,6 +54,12 @@ angular.module('benefitsApp.controllers', [])
         alert(e);
     }
   }
+
+})
+
+.controller('ListingCtrl', function($scope, $state, $stateParams) {
+  
+  $scope.listing = $stateParams.listing;
 
 })
 

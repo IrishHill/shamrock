@@ -1,0 +1,35 @@
+.video_wrapper {
+    background: rgba(25, 29, 34, 0.75);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.video {
+    height: 290px;
+    min-width: 100%;
+    opacity: .4;
+    z-index: 1;
+    transition: opacity 1500ms linear;
+}
+
+.gif_wrapper {
+    background: rgba(25, 29, 34, 0.75);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.gif {
+    height: 290px;
+    min-width: 100%;
+    opacity: .4;
+    z-index: 1;
+    transition: opacity 1500ms linear;
+}

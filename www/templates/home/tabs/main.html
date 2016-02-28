@@ -1,0 +1,133 @@
+<ion-view>
+    <ion-content>
+        <!-- trip search -->
+        <div class="panel-body">
+
+            <!-- <div class="video_wrapper">
+                <video id="mainVideo" class="video js-background_video " muted="" loop="true" autoplay="true">
+                    <source src="//vimeo-hp-videos.global.ssl.fastly.net/1/1-vp9.webm" type="video/webm; codecs=vp9">
+                    <source src="//vimeo-hp-videos.global.ssl.fastly.net/1/1-vp8.webm" type="video/webm">
+                    <source src="//vimeo-hp-videos.global.ssl.fastly.net/1/1.mp4" type="video/mp4">
+                </video>
+            </div> -->
+
+            <!-- <div class="gif_wrapper">
+                <img class="gif" src="https://media.giphy.com/media/IP6Lh6vrvkCvS/giphy.gif">
+            </div> -->
+
+            <div class="search-wrapper">
+
+                <form action="/s" id="search-form--sm" class="search-form">
+                    <input type="hidden" name="source" value="mob">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label for="header-location--sm">
+                                <span class="screen-reader-only">Why are you traveling?</span>
+                                <input type="text" placeholder="Why are you traveling?" autocomplete="off" name="location" id="header-location--sm" class="input-large">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row row-condensed">
+                        <div class="col-sm-6">
+                            <label class="checkin">
+                                <span class="screen-reader-only">Check in</span>
+                                <input type="text" name="checkin" class="checkin input-large ui-datepicker-target" placeholder="Check in">
+                            </label>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="checkout">
+                                <span class="screen-reader-only">Check out</span>
+                                <input type="text" name="checkout" class="checkout input-large ui-datepicker-target" placeholder="Check out">
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row space-2 space-top-1">
+                        <div class="col-sm-12">
+                            <label for="header-search-guests" class="">
+                                Select a bundle
+                            </label>
+                            <div class="select select-block select-large">
+                                <select id="header-search-guests" name="guests">
+                                    <option value="1">Work</option>
+                                    <option value="1">Events</option>
+                                    <option value="2">Play</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="panel room-type-filter--sm row-space-top-1">
+                        <div class="panel-body">
+                            <div class="row text-center">
+                                <input type="checkbox" id="room-type-0--sm" name="room_types[]" value="Entire home/apt">
+                                <label class="col-sm-4 modal-filter needsclick" for="room-type-0--sm">
+                                    <i class="icon icon-entire-place icon-size-2 needsclick"></i>
+                                    <br>Entire home/apt
+                                </label>
+                                <input type="checkbox" id="room-type-1--sm" name="room_types[]" value="Private room">
+                                <label class="col-sm-4 modal-filter needsclick" for="room-type-1--sm">
+                                    <i class="icon icon-private-room icon-size-2 needsclick"></i>
+                                    <br>Private room
+                                </label>
+                                <input type="checkbox" id="room-type-2--sm" name="room_types[]" value="Shared room">
+                                <label class="col-sm-4 modal-filter needsclick" for="room-type-2--sm">
+                                    <i class="icon icon-shared-room icon-size-2 needsclick"></i>
+                                    <br>Shared room
+                                </label>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="row row-space-top-2">
+                        <div class="col-sm-12">
+                            <button ng-click="voiceTest()" class="btn btn-primary btn-large btn-bordered btn-block">
+                                <i class="icon icon-search"></i> Book your trip
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="section-tiles">
+            <!-- featured listings -->
+            <ion-list class="homepage-module">
+                <div class="row row-column">
+                    <div ng-repeat="listing in listings">
+                        <div class="col-lg-4 rm-padding-sm col-md-12" ng-click="selectListing(listing)">
+                            <div class="host-block" ng-class="{'selected': listing.selectedListing}">
+                                <div class="host-details">
+                                    <div class="title">
+                                        <h2>Warm cozy retreat, let us take care of you</h2>
+                                    </div>
+                                    <div class="meta">
+                                        <p>All - 62 reviews - Mountain View</p>
+                                    </div>
+                                </div>
+                                <div class="host-rating">
+                                    <div class="host-image">
+                                        <div class="media-photo media-round row-space-2 card-profile-picture">
+                                            <img alt="Original" height="50" src="https://a2.muscache.com/ac/users/27299458/profile_pic/1423212075/original.jpg?interpolation=lanczos-none&amp;crop=w:w;*,*&amp;crop=h:h;*,*&amp;resize=68:*&amp;output-format=jpg&amp;output-quality=70" width="50">
+                                        </div>
+                                    </div>
+                                    <div class="host-stars">
+                                        <span class="rating"><div class="star-rating"><div class="foreground"><i class="airicon airicon-beach airicon-star"></i><i class="airicon airicon-beach airicon-star"></i><i class="airicon airicon-beach airicon-star"></i><i class="airicon airicon-beach airicon-star"></i><i class="airicon airicon-beach airicon-star-half"></i></div><div class="background"><i class="airicon airicon-star airicon-light-gray"></i><i class="airicon airicon-star airicon-light-gray"></i><i class="airicon airicon-star airicon-light-gray"></i><i class="airicon airicon-star airicon-light-gray"></i><i class="airicon airicon-star airicon-light-gray"></i></div></div></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="discovery-card rm-padding-sm row-space-4 darken-on-hover " style="background-image:url('{{listing.image_url}}');" data-sm-img-url="{{listing.image_url}}">
+                                <a ng-click="go(listing)" class="link-reset" data-hook="discovery-card" data-id="Sonoma">
+                                    <div class="text-center text-contrast">
+                                        <h2>
+                                            <strong>{{listing.title}}</strong>
+                                        </h2>
+                                        <p>Popular Host</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-list>
+
+        </div>
+    </ion-content>
+</ion-view>

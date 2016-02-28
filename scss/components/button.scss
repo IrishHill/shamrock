@@ -3,4 +3,14 @@
 	    padding: 9px 27px;
 	    font-size: 15px;
 	}
+	.btn-bordered {
+		color: $brand-primary;
+		border-color: $brand-primary;
+		background-color: transparent;
+	}
+	.btn-solid {
+		color: #fff;
+		border-color: $brand-primary;
+		background-color: $brand-primary;
+	}
 }
