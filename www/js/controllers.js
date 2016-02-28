@@ -11,6 +11,42 @@ angular.module('benefitsApp.controllers', [])
 
 })
 
+.controller('HomeCtrl', function($scope) {
+
+  // main home data
+  $scope.listings = [
+    { title: 'Sonoma', image_url: './img/1118.jpeg', body: 'Your spending budget is low.', notifications: 1, alert: true },
+    { title: 'Napa', image_url: './img/1566.jpeg', list: true },
+    { title: 'Santa Cruz', image_url: './img/2439.jpeg', advice: true, 'subTitle': '$1500 paid vacation with Capital One', body: 'Enjoy a nice vacation with your usage of Capital One rewards card.' }
+  ];
+  $scope.discoveries = [
+    { title: 'Sonoma', image_url: './img/61981fc1_original.jpg', body: 'Your spending budget is low.', notifications: 1, alert: true },
+    { title: 'Napa', image_url: './img/61981fc1_original.jpg', list: true },
+    { title: 'Santa Cruz', image_url: './img/61981fc1_original.jpg', advice: true, 'subTitle': '$1500 paid vacation with Capital One', body: 'Enjoy a nice vacation with your usage of Capital One rewards card.' }
+  ];
+  
+  // main home function
+  $scope.voiceTest = function() {
+    try {     
+      ApiAIPlugin.requestVoice({},
+        function (response) {
+            console.log(JSON.stringify(response));
+            var query = response.result.resolvedQuery;
+            var to = query.metadata.parameters.to;
+            alert(query);
+            alert(to);
+        },
+        function (error) {
+            // place your error processing here 
+            alert(error);
+        });                
+    } catch (e) {
+        alert(e);
+    }
+  }
+
+})
+
 .controller('LoginCtrl', function($scope, $state, $ionicViewService) {
   
   $ionicViewService.nextViewOptions({

@@ -13,6 +13,17 @@ angular.module('benefitsApp', ['ionic', 'benefitsApp.controllers', 'benefitsApp.
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
 
+    console.log(ApiAIPlugin);
+    ApiAIPlugin.init(
+            {
+                subscriptionKey: "f1efe8aa-daed-4e16-97a8-0fd14f395afe ", // insert your subscription key here 
+                clientAccessToken: "fbd0bfeee8d54c758bfc58c136fa83a2 ", // insert your client access key here 
+                lang: "en" // set lang tag from list of supported languages 
+            }, 
+            function(result) { /* success processing */ },
+            function(error) { /* error processing */ }
+        );
+
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
     if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -22,7 +33,7 @@ angular.module('benefitsApp', ['ionic', 'benefitsApp.controllers', 'benefitsApp.
     }
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
-      StatusBar.styleLightContent();
+      StatusBar.styleDefault();
     }
   });
 })
@@ -41,7 +52,16 @@ angular.module('benefitsApp', ['ionic', 'benefitsApp.controllers', 'benefitsApp.
     controller: 'AppCtrl'
   })
 
-  // Control state with login
+  .state('app.home', {
+    url: '/home',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/home/home.html',
+        controller: 'HomeCtrl'
+      }
+    }
+  })
+
   .state('app.login', {
     url: '/login',
     views: {
@@ -142,5 +162,5 @@ angular.module('benefitsApp', ['ionic', 'benefitsApp.controllers', 'benefitsApp.
     }
   })
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/login');
+  $urlRouterProvider.otherwise('/app/home');
 });

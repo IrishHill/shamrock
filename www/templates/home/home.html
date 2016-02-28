@@ -1,0 +1,190 @@
+<ion-view view-title="<img class=" title-image " src="images/kidsintouchtext.png " />">
+    <ion-content>
+        <!-- trip search -->
+        <div class="panel-body">
+            <div class="search-wrapper">
+                <form action="/s" id="search-form--sm" class="search-form">
+                    <input type="hidden" name="source" value="mob">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label for="header-location--sm">
+                                <span class="screen-reader-only">Where are you going?</span>
+                                <input type="text" placeholder="Where are you going?" autocomplete="off" name="location" id="header-location--sm" class="input-large">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row row-condensed">
+                        <div class="col-sm-6">
+                            <label class="checkin">
+                                <span class="screen-reader-only">Check in</span>
+                                <input type="text" name="checkin" class="checkin input-large ui-datepicker-target" placeholder="Check in">
+                            </label>
+                        </div>
+                        <div class="col-sm-6">
+                            <label class="checkout">
+                                <span class="screen-reader-only">Check out</span>
+                                <input type="text" name="checkout" class="checkout input-large ui-datepicker-target" placeholder="Check out">
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row space-2 space-top-1">
+                        <div class="col-sm-12">
+                            <label for="header-search-guests" class="screen-reader-only">
+                                Number of guests
+                            </label>
+                            <div class="select select-block select-large">
+                                <select id="header-search-guests" name="guests">
+                                    <option value="1">1 guest</option>
+                                    <option value="2">2 guests</option>
+                                    <option value="3">3 guests</option>
+                                    <option value="4">4 guests</option>
+                                    <option value="5">5 guests</option>
+                                    <option value="6">6 guests</option>
+                                    <option value="7">7 guests</option>
+                                    <option value="8">8 guests</option>
+                                    <option value="9">9 guests</option>
+                                    <option value="10">10 guests</option>
+                                    <option value="11">11 guests</option>
+                                    <option value="12">12 guests</option>
+                                    <option value="13">13 guests</option>
+                                    <option value="14">14 guests</option>
+                                    <option value="15">15 guests</option>
+                                    <option value="16">16 guests</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="panel room-type-filter--sm row-space-top-1">
+                        <div class="panel-body">
+                            <div class="row text-center">
+                                <input type="checkbox" id="room-type-0--sm" name="room_types[]" value="Entire home/apt">
+                                <label class="col-sm-4 modal-filter needsclick" for="room-type-0--sm">
+                                    <i class="icon icon-entire-place icon-size-2 needsclick"></i>
+                                    <br>Entire home/apt
+                                </label>
+                                <input type="checkbox" id="room-type-1--sm" name="room_types[]" value="Private room">
+                                <label class="col-sm-4 modal-filter needsclick" for="room-type-1--sm">
+                                    <i class="icon icon-private-room icon-size-2 needsclick"></i>
+                                    <br>Private room
+                                </label>
+                                <input type="checkbox" id="room-type-2--sm" name="room_types[]" value="Shared room">
+                                <label class="col-sm-4 modal-filter needsclick" for="room-type-2--sm">
+                                    <i class="icon icon-shared-room icon-size-2 needsclick"></i>
+                                    <br>Shared room
+                                </label>
+                            </div>
+                        </div>
+                    </div> -->
+                    <div class="row row-space-top-2">
+                        <div class="col-sm-12">
+                            <button ng-click="voiceTest()" class="btn btn-primary btn-large btn-block">
+                                <i class="icon icon-search"></i> Book your trip
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="section-tiles">
+            <!-- section title -->
+            <div class="section-intro text-center row-space-6 row-space-top-2">
+                <h2 class="row-space-1">
+                <strong>Popular Bundles</strong>
+              </h2>
+                <p class="text-lead">
+                    Full fledged services in one package.
+                </p>
+            </div>
+            <!-- featured listings -->
+            <ion-list class="homepage-module">
+                <div class="row row-column">
+                    <div ng-repeat="listing in listings">
+                        <div class="col-lg-4 rm-padding-sm col-md-12">
+                            <div class="host-block">
+                                <div class="host-details">
+                                    <div class="title">
+                                        <h2>Warm cozy retreat, let us take care of you</h2>
+                                    </div>
+                                    <div class="meta">
+                                        <p>All - 62 reviews - Mountain View</p>
+                                    </div>
+                                </div>
+                                <div class="host-rating">
+                                    <div class="host-image">
+                                        <div class="media-photo media-round row-space-2 card-profile-picture">
+                                            <img alt="Original" height="50" src="https://a2.muscache.com/ac/users/27299458/profile_pic/1423212075/original.jpg?interpolation=lanczos-none&amp;crop=w:w;*,*&amp;crop=h:h;*,*&amp;resize=68:*&amp;output-format=jpg&amp;output-quality=70" width="50">
+                                        </div>
+                                    </div>
+                                    <div class="host-stars">
+                                        <span class="rating"><div class="star-rating"><div class="foreground"><i class="airicon airicon-beach airicon-star"></i><i class="airicon airicon-beach airicon-star"></i><i class="airicon airicon-beach airicon-star"></i><i class="airicon airicon-beach airicon-star"></i><i class="airicon airicon-beach airicon-star-half"></i></div><div class="background"><i class="airicon airicon-star airicon-light-gray"></i><i class="airicon airicon-star airicon-light-gray"></i><i class="airicon airicon-star airicon-light-gray"></i><i class="airicon airicon-star airicon-light-gray"></i><i class="airicon airicon-star airicon-light-gray"></i></div></div></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="discovery-card rm-padding-sm row-space-4 darken-on-hover " style="background-image:url('{{listing.image_url}}');" data-sm-img-url="{{listing.image_url}}">
+                                <a href="/getaways/San-Francisco?destination=Sonoma" class="link-reset" data-hook="discovery-card" data-id="Sonoma">
+                                    <div class="h2 text-center text-contrast">
+                                        <strong>{{listing.title}}</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="discovery-card rm-padding-sm row-space-4 darken-on-hover " style="background-image:url('{{listing.image_url}}');" data-sm-img-url="{{listing.image_url}}">
+                                <a href="/getaways/San-Francisco?destination=Sonoma" class="link-reset" data-hook="discovery-card" data-id="Sonoma">
+                                    <div class="h2 text-center text-contrast">
+                                        <strong>{{listing.title}}</strong>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="discovery-card rm-padding-sm row-space-4 darken-on-hover " style="background-image:url('{{listing.image_url}}');" data-sm-img-url="{{listing.image_url}}">
+                                <a href="/getaways/San-Francisco?destination=Sonoma" class="link-reset" data-hook="discovery-card" data-id="Sonoma">
+                                    <div class="h2 text-center text-contrast">
+                                        <strong>{{listing.title}}</strong>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-list>
+            <!-- section title -->
+            <div class="section-intro text-center row-space-6 row-space-top-8">
+                <h2 class="row-space-1">
+                <strong>Some of our best hosts</strong>
+              </h2>
+                <p class="text-lead">
+                    Here are some of the top rated hosts.
+                </p>
+            </div>
+            <!-- featured discoveries -->
+            <ion-list class="homepage-module">
+                <div class="row row-column">
+                    <div ng-repeat="discovery in discoveries">
+                        <div class="col-lg-4 col-md-6 col-sm-12 rm-padding-sm row-space-4">
+                            <div class="">
+                                <div class="darken-on-hover-container">
+                                    <a href="/rooms/5273683" class="text-normal link-reset">
+                                        <div class="discovery-card darken-on-hover discovery-listing" style="background-image:url('{{discovery.image_url}}')">
+                                            <div class="panel-overlay-bottom-left panel-overlay-label panel-overlay-listing-label">
+                                                <sup class="h6 text-contrast">$</sup>
+                                                <span class="h3 price-amount">954</span>
+                                                <sup class="h6 text-contrast"></sup>
+                                            </div>
+                                            <div class="va-container va-container-v va-container-h">
+                                                <div class="va-middle text-center text-contrast">
+                                                    <div class="media-photo media-round row-space-2 card-profile-picture">
+                                                        <img alt="Original" height="50" src="https://a2.muscache.com/ac/users/27299458/profile_pic/1423212075/original.jpg?interpolation=lanczos-none&amp;crop=w:w;*,*&amp;crop=h:h;*,*&amp;resize=68:*&amp;output-format=jpg&amp;output-quality=70" width="50">
+                                                    </div>
+                                                    <div class="h3 strong">Danai’s home</div>
+                                                    <div>Chiang Mai</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>
