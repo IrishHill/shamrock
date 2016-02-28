@@ -1,7 +1,24 @@
 {
   "name": "HelloIonic",
-  "private": "true",
+  "private": true,
   "devDependencies": {
     "ionic": "driftyco/ionic-bower#1.2.4"
+  },
+  "homepage": "https://github.com/IrishHill/shamrock",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "www/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "bootstrap-sass": "~3.3.6"
   }
 }

@@ -1,0 +1,46 @@
+.col-sm-12 {
+    width: 100%;
+}
+
+.row-space-top-8 {
+    margin-top: 50px;
+}
+
+.row-space-6 {
+    margin-bottom: 37.5px;
+}
+
+.row {
+    width: auto;
+}
+
+.row-column {
+    width: auto;
+    flex-direction: column;
+    padding: 0;  
+}
+
+.screen-reader-only {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px; 
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.text-contrast {
+    color: #fff;
+} 
+
+// small
+@media (max-width: 767px) {
+	.rm-padding-sm {
+	    padding-bottom: 0;
+	    padding-top: 0;
+	    margin-bottom: 0;
+	    margin-top: 0;
+	}
+}
