@@ -14,7 +14,33 @@
 	    background-size: cover;
 	    background-position: center;
 	    position: relative;
-	    height: 344px; 
+	    height: 134px;
+	}
+
+}
+
+.host-block {
+	display: flex;
+	background: #fff;
+	padding: 20px 15px 5px;
+	position: relative;
+	.host-details {
+		h2 {
+			font-size: 1.1em;
+		}
+	}
+
+	.host-rating {
+		position: absolute;
+		bottom: -45px;
+		right: 30px;
+		z-index: 9;
+		.media-photo {
+			border-radius: 100%;
+			height: 50px;
+			width: 50px;
+			overflow: hidden;
+		}
 	}
 
 }

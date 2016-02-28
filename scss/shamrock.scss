@@ -6,10 +6,12 @@
 @import "helpers";
 
 // Base
+@import "base/airglyphs";
 @import "base/typography";
 @import "base/forms";
 
 // Modules
+@import "modules/search-wrapper";
 @import "modules/homepage-module";
 @import "modules/base";
 @import "modules/panel";
@@ -19,6 +21,7 @@
 @import "modules/company";  
 
 // Components
+@import "components/stars";
 @import "components/button";
 @import "components/card";
 @import "components/employee"; 
